@@ -1,0 +1,116 @@
+<style>
+
+body { margin:0; padding:0}
+
+#map { position:absolute; top:0px; left:0; width:100%; height:100%}
+#shape { position:absolute; top:0px; right:0px ; width:200px; height:200px ; 
+	text-align: center;line-height: 30px; color:#E96052;
+	font-family: Verdana;
+	}
+
+#compteur { position:absolute; top:140px; right:32px ; width:110px; height:25px ; 
+	text-align: center;line-height: 25px; color:white;
+	background-color: #E96052; border-radius: 5px 5px 5px 5px;
+	font-family: Verdana;
+	}
+
+#bottom { position:absolute; top:100%; bottom:0; left:0; right:0 ; width:100%;  height:100%;
+	background-color: #242426; color:#E5E5E5;
+	padding: 0px;
+}
+
+a {
+    color: hotpink;
+}
+
+
+.par{
+padding:20px;text-align: justify;
+
+}
+
+.infotab {
+    width:280px;
+    background-color : white;
+    color : black;		
+    /* Ou de façon plus concise :  border: 15px solid blue; */
+  }
+.tbl1{
+text-align: center;
+
+}
+.tbl2{
+font-size:80%;
+line-height: 90%;
+text-align: justify;
+}
+
+
+
+
+
+
+.marker-cluster-small {
+	background-color: #E96052;
+	}
+.marker-cluster-small div {
+	background-color: #D34640;
+	}
+
+.marker-cluster-medium {
+	background-color: #E96052;
+	}
+.marker-cluster-medium div {
+	background-color: #D34640;
+	}
+
+.marker-cluster-large {
+	background-color: #E96052;
+	}
+.marker-cluster-large div {
+	background-color: #D34640;
+	}
+
+	/* IE 6-8 fallback colors */
+.leaflet-oldie .marker-cluster-small {
+	background-color: rgb(181, 226, 140);
+	}
+.leaflet-oldie .marker-cluster-small div {
+	background-color: rgb(110, 204, 57);
+	}
+
+.leaflet-oldie .marker-cluster-medium {
+	background-color: rgb(241, 211, 87);
+	}
+.leaflet-oldie .marker-cluster-medium div {
+	background-color: rgb(240, 194, 12);
+	}
+
+.leaflet-oldie .marker-cluster-large {
+	background-color: rgb(253, 156, 115);
+	}
+.leaflet-oldie .marker-cluster-large div {
+	background-color: rgb(241, 128, 23);
+}
+
+.marker-cluster {
+	background-clip: padding-box;
+	border-radius: 20px;
+	}
+.marker-cluster div {
+	width: 30px;
+	height: 30px;
+	margin-left: 5px;
+	margin-top: 5px;
+
+	text-align: center;
+	border-radius: 15px;
+	font: 12px "Helvetica Neue", Arial, Helvetica, sans-serif;
+	}
+.marker-cluster span {
+	line-height: 30px;
+	}
+
+
+
+</style>
