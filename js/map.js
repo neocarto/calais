@@ -30,7 +30,7 @@ function attachPopups() {
       layer.bindPopup(
 
 	"<table class='infotab'>" +
-  	"<tr><td width='30px'><img src='img/" + props.photo + "' width='80px'></img></td><td><b>" + n + "</b><br/>" + nat + "</td></tr>" +
+  	"<tr><td width='30px'><img src='img/photos/" + props.photo + "' width='80px'></img></td><td><b>" + n + "</b><br/>" + nat + "</td></tr>" +
  	"<tr><td colspan=2 class='tbl1'>" + props.cause + "</td></tr>" +
  	"<tr><td colspan=2 class='tbl2'>" + props.description + "</td></tr>" +
 	"</table>"
