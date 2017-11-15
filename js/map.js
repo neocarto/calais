@@ -61,8 +61,9 @@ points.on('ready', function() {
 
 
 // Others elements ---------------------------------------------------
-d3.select('#shape').html("<img src='img/corner.png' width='200px'></img>")
-d3.select('#compteur').html("<b>" + points.getLayers().length +" morts</b>")
+d3.select('#title').html("À CALAIS, LA FRONTIÈRE TUE !")
+//d3.select('#title').html("<img src='img/title.png' width='400px'></img>")
+d3.select('#compteur').html(points.getLayers().length +" morts")
 
 
 

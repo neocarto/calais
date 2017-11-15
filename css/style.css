@@ -3,14 +3,18 @@
 body { margin:0; padding:0}
 
 #map { position:absolute; top:0px; left:0; width:100%; height:100%}
-#shape { position:absolute; top:0px; right:0px ; width:200px; height:200px ; 
-	text-align: center;line-height: 30px; color:#E96052;
+
+#title { position:absolute; top:0px; right:0px ; width:510px; height:55px ; 
+	text-align: center;line-height: 50px; color:white;
+	font-size:30px;
+	background-color: #E96052; border-radius: 0px 0px 0px 15px;
 	font-family: Verdana;
 	}
 
-#compteur { position:absolute; top:140px; right:32px ; width:110px; height:25px ; 
+#compteur { position:absolute; top:55px; right:0px ; width:170px; height:30px ; 
 	text-align: center;line-height: 25px; color:white;
-	background-color: #E96052; border-radius: 5px 5px 5px 5px;
+	font-size:20px;
+	background-color: #E96052; border-radius: 0px 0px 0px 15px;
 	font-family: Verdana;
 	}
 
@@ -20,7 +24,7 @@ body { margin:0; padding:0}
 }
 
 a {
-    color: hotpink;
+    color: yellow;
 }
 
 
