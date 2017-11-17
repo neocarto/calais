@@ -32,6 +32,7 @@ var tabulate = function (data,columns) {
   
 }
 
+d3.select('#bottom').html("<br/>")
 d3.csv('data/Calais.csv',function (data) {
 	var columns = ['name','age','year','cause','nationality']
   tabulate(data,columns)
