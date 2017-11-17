@@ -122,9 +122,10 @@ $( function() {
 
 
 // Others elements ---------------------------------------------------
-d3.select('#title').html("À CALAIS, LA FRONTIÈRE TUE !")
 d3.select('#logo').html("<img src='img/logo.png' width='250px'></img>")
-//d3.select('#compteur').html(markers.getLayers().length +" morts")
+d3.select('#contrib').html("<a href='mailto:mael.galisson@gmail.com?subject=[Migrants Calais]&cc=nicolas.lambert@cnrs.fr&body=Je contribue...'>[Contribuez]</a>")
+
+
 
 // https://github.com/dwilhelm89/LeafletSlider
 
