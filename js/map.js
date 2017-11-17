@@ -1,6 +1,3 @@
-var endDate = new Date();
-endDate.setUTCMinutes(0, 0, 0);
-
 var map = L.map('map', {
     zoom: 9,
     fullscreenControl: true,
@@ -59,9 +56,7 @@ points.on('ready', function() {
 
 
 // Others elements ---------------------------------------------------
-d3.select('#title').html("À CALAIS, LA FRONTIÈRE TUE !")
-//d3.select('#title').html("<img src='img/title.png' width='400px'></img>")
-d3.select('#compteur').html(markers.getLayers().length +" morts")
+d3.select('#compteur').html(points.getLayers().length +" morts")
 
 
 
@@ -83,7 +78,7 @@ function foo(year_min, year_max) {
   resetAllPoints();
   Object.keys(points._layers).forEach((k) => {
     const year = +points._layers[k].feature.properties.date.slice(0,4);
-    if (!(year < year_max && year > year_min)) {
+    if (!(year <= year_max && year >= year_min)) {
       on_hold.push(points._layers[k]);
       points._layers[k] = null;
       delete points._layers[k];
@@ -100,15 +95,36 @@ function foo(year_min, year_max) {
   });
   let lyrs = markers.getLayers();
   lyrs.forEach(l => { l.setIcon(new my_icon); });
+d3.select('#compteur').html(points.getLayers().length +" morts")
+
 }
+
+
+// Slider ---------------------------------------------------
+ 
+$( function() {
+    $( "#slider-range" ).slider({
+      
+      range: true,
+      min: 1999,
+      max: 2017,
+      values: [ 1999, 2017 ],
+      slide: function( event, ui ) {
+        $( "#amount" ).val( "De " + ui.values[ 0 ] + " à " + ui.values[ 1 ] );
+	foo(ui.values[ 0 ],ui.values[ 1 ]);
+      }
+    });
+    $( "#amount" ).val( "De " + $( "#slider-range" ).slider( "values", 0 ) +
+      " à " + $( "#slider-range" ).slider( "values", 1 ) );
+  } );
+
+
 
 
 // Others elements ---------------------------------------------------
 d3.select('#title').html("À CALAIS, LA FRONTIÈRE TUE !")
 d3.select('#logo').html("<img src='img/logo.png' width='250px'></img>")
-d3.select('#slider').html("slider here")
-d3.select('#compteur').html(points.getLayers().length +" morts")
-
+//d3.select('#compteur').html(markers.getLayers().length +" morts")
 
 // https://github.com/dwilhelm89/LeafletSlider
 
