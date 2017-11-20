@@ -22,7 +22,7 @@ function attachPopups() {
       var props = layer.feature.properties;
 
 	if (!props.name) {n = "Anonyme"} else {n = props.name}
-	if (!props.natioinality) {nat = "(Nationalité inconnue)"} else {nat = "(Nationalité " + props.nationality + ")"}
+	if (!props.nationality) {nat = "(Nationalité inconnue)"} else {nat = "(Nationalité " + props.nationality + ")"}
 
       layer.bindPopup(
 
