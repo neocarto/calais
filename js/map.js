@@ -6,7 +6,7 @@ var map = L.map('map', {
 
 
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
-	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> ; Nicolas Lambert & Maël Galisson, 2017',
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> ; Nicolas Lambert & Maël Galisson, 2020',
 	subdomains: 'abcd',
 	maxZoom: 19
 }).addTo(map);
@@ -107,8 +107,8 @@ $( function() {
       
       range: true,
       min: 1999,
-      max: 2018,
-      values: [ 1999, 2018 ],
+      max: 2019,
+      values: [ 1999, 2019 ],
       slide: function( event, ui ) {
         $( "#amount" ).val( "De " + ui.values[ 0 ] + " à " + ui.values[ 1 ] );
 	foo(ui.values[ 0 ],ui.values[ 1 ]);
