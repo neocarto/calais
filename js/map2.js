@@ -6,13 +6,13 @@ var map = L.map('map', {
 
 
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
-	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> ; Nicolas Lambert & Maël Galisson, 2017',
+	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> ; Nicolas Lambert & Maël Galisson, 2020',
 	subdomains: 'abcd',
 	maxZoom: 19
 }).addTo(map);
 
 
-var points = omnivore.csv('data/Calais.csv');
+var points = omnivore.csv('../data/Calais.csv');
 var markers;
 var on_hold = [];
 
@@ -21,8 +21,8 @@ function attachPopups() {
     points.eachLayer(function (layer) {
       var props = layer.feature.properties;
 
-	if (!props.name) {n = "Anonyme"} else {n = props.name}
-	if (!props.nationality) {nat = "(Nationalité inconnue)"} else {nat = "(Nationalité " + props.nationality + ")"}
+	if (!props.name) {n = "Anonymous"} else {n = props.name}
+	if (!props.nationality) {nat = "(Nationality unknown)"} else {nat = "(Nationality " + props.nationality + ")"}
 
       layer.bindPopup(
 
@@ -47,7 +47,7 @@ points.on('ready', function() {
   points.eachLayer(attachPopups);
   let my_icon = L.Icon.extend({
     options: {
-      iconUrl: "img/reddot.png",
+      iconUrl: "../img/reddot.png",
       iconSize: [13,13]
     }
   });
@@ -56,7 +56,7 @@ points.on('ready', function() {
 
 
 // Others elements ---------------------------------------------------
-d3.select('#compteur').html(points.getLayers().length +" morts")
+d3.select('#compteur').html(points.getLayers().length +" deaths")
 
 
 
@@ -89,7 +89,7 @@ function foo(year_min, year_max) {
   points.eachLayer(attachPopups);
   let my_icon = L.Icon.extend({
     options: {
-      iconUrl: "img/reddot.png",
+      iconUrl: "../img/reddot.png",
       iconSize: [13,13]
     }
   });
@@ -114,16 +114,16 @@ $( function() {
 	foo(ui.values[ 0 ],ui.values[ 1 ]);
       }
     });
-    $( "#amount" ).val( "De " + $( "#slider-range" ).slider( "values", 0 ) +
-      " à " + $( "#slider-range" ).slider( "values", 1 ) );
+    $( "#amount" ).val( "From " + $( "#slider-range" ).slider( "values", 0 ) +
+      " to " + $( "#slider-range" ).slider( "values", 1 ) );
   } );
 
 
 
 
 // Others elements ---------------------------------------------------
-d3.select('#logo').html("<img src='img/logo.png' width='250px'></img>")
-d3.select('#contrib').html("<a href='mailto:mael.galisson@gmail.com?subject=[Migrants Calais]&cc=nicolas.lambert@cnrs.fr&body=Je contribue...'>[Contribuez]</a>")
+d3.select('#logo').html("<img src='../img/logo.png' width='250px'></img>")
+d3.select('#contrib').html("<a href='mailto:mael.galisson@gmail.com?subject=[Migrants Calais]&cc=nicolas.lambert@cnrs.fr&body=Je contribue...'>[Contribute]</a>")
 
 
 
