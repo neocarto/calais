@@ -5,10 +5,8 @@ var map = L.map('map', {
 });
 
 
-L.tileLayer('https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png', {
-	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> ; Nicolas Lambert & Maël Galisson, 2020',
-	subdomains: 'abcd',
-	maxZoom: 19
+L.tileLayer('http://tiles.lyrk.org/ls/{z}/{x}/{y}?apikey=982c82cc765f42cf950a57de0d891076', {
+    attribution: '© <a href="http://osm.org/copyright">OpenStreetMap</a>, Nicolas Lambert & Maël Galisson, 2020'
 }).addTo(map);
 
 
@@ -122,7 +120,7 @@ $( function() {
 
 
 // Others elements ---------------------------------------------------
-d3.select('#logo').html("<img src='../img/logo.png' width='250px'></img>")
+d3.select('#logo').html("<img src='../img/logo2.png' width='250px'></img>")
 d3.select('#contrib').html("<a href='mailto:mael.galisson@gmail.com?subject=[Migrants Calais]&cc=nicolas.lambert@cnrs.fr&body=Je contribue...'>[Contribute]</a>")
 
 
