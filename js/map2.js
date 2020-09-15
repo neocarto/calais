@@ -5,7 +5,7 @@ var map = L.map('map', {
 });
 
 
-L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
+L.tileLayer('//{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> ; Nicolas Lambert & Maël Galisson, 2020',
 	subdomains: 'abcd',
 	maxZoom: 19
@@ -27,7 +27,7 @@ function attachPopups() {
       layer.bindPopup(
 
 	"<table class='infotab'>" +
-  	"<tr><td width='30px'><img src='img/photos/" + props.photo + "' width='80px'></img></td><td><b>" + n + "</b><br/>" + nat + "</td></tr>" +
+  	"<tr><td width='30px'><img src='../img/photos/" + props.photo + "' width='80px'></img></td><td><b>" + n + "</b><br/>" + nat + "</td></tr>" +
  	"<tr><td colspan=2 class='tbl1'>" + props.cause + "</td></tr>" +
  	"<tr><td colspan=2 class='tbl2'>" + props.description + "</td></tr>" +
 	"</table>"
@@ -107,10 +107,10 @@ $( function() {
       
       range: true,
       min: 1999,
-      max: 2018,
-      values: [ 1999, 2018 ],
+      max: 2020,
+      values: [ 1999, 2020 ],
       slide: function( event, ui ) {
-        $( "#amount" ).val( "De " + ui.values[ 0 ] + " à " + ui.values[ 1 ] );
+        $( "#amount" ).val( "From " + ui.values[ 0 ] + " to " + ui.values[ 1 ] );
 	foo(ui.values[ 0 ],ui.values[ 1 ]);
       }
     });
