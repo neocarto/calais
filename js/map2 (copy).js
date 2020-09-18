@@ -21,20 +21,12 @@ function attachPopups() {
 
 	if (!props.name) {n = "Anonymous"} else {n = props.name}
 	if (!props.nationality) {nat = "(Nationality unknown)"} else {nat = "(Nationality " + props.nationality + ")"}
-	
-	
-	var dt = new Date(Date(props.date))
-
-	var year  = dt.getFullYear();
-	var month = dt.toLocaleString('default', { month: 'long' })
-	var day   = dt.getDate().toString().padStart(2, "0");
-	var mydate = month + " " + day + ", " + year;
 
       layer.bindPopup(
 
 	"<table class='infotab'>" +
   	"<tr><td width='30px'><img src='../img/photos/" + props.photo + "' width='80px'></img></td><td><b>" + n + "</b><br/>" + nat + "</td></tr>" +
- 	"<tr><td colspan=2 class='tbl1'>" + props.cause + "<br/>on " + mydate + "</td></tr>" +
+ 	"<tr><td colspan=2 class='tbl1'>" + props.cause + "</td></tr>" +
  	"<tr><td colspan=2 class='tbl2'>" + props.description + "</td></tr>" +
 	"</table>"
       );
