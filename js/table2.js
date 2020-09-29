@@ -34,7 +34,7 @@ var tabulate = function (data,columns) {
 
 d3.select('#bottom').html("<br/>")
 d3.csv('../data/Calais.csv',function (data) {
-	var columns = ['name','age','year','cause','nationality']
+	var columns = ['name','age','year','incident','nationality']
   tabulate(data,columns)
  d3.select('#bottom').append('div').attr("id","footnote").html("<br/><a href='../data/Calais.csv' download>Download the data</a><br/><br/>")
 })

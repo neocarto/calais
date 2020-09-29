@@ -20,7 +20,7 @@ function attachPopups() {
       var props = layer.feature.properties;
 
 	if (!props.name) {n = "Anonymous"} else {n = props.name}
-	if (!props.nationality) {nat = "(Nationality unknown)"} else {nat = "(Nationality " + props.nationality + ")"}
+	if (!props.nationality) {nat = "(Nationality unknown)"} else {nat = "(" + props.nationality + " nationality)"}
 	
 	
 	var dt = new Date(Date(props.date))
@@ -34,8 +34,8 @@ function attachPopups() {
 
 	"<table class='infotab'>" +
   	"<tr><td width='30px'><img src='../img/photos/" + props.photo + "' width='80px'></img></td><td><b>" + n + "</b><br/>" + nat + "</td></tr>" +
- 	"<tr><td colspan=2 class='tbl1'>" + props.cause + "<br/>on " + mydate + "</td></tr>" +
- 	"<tr><td colspan=2 class='tbl2'>" + props.description + "</td></tr>" +
+ 	"<tr><td colspan=2 class='tbl1'>" + props.incident + "<br/>on " + mydate + "</td></tr>" +
+ 	"<tr><td colspan=2 class='tbl2'>" + props.description_en + "</td></tr>" +
 	"</table>"
       );
     });
