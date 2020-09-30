@@ -23,12 +23,30 @@ function attachPopups() {
 	if (!props.nationality) {nat = "(Nationality unknown)"} else {nat = "(" + props.nationality + " nationality)"}
 	
 	
-	var dt = new Date(Date(props.date))
+	var dt = props.date;
 
-	var year  = dt.getFullYear();
-	var month = dt.toLocaleString('default', { month: 'long' })
-	var day   = dt.getDate().toString().padStart(2, "0");
-	var mydate = month + " " + day + ", " + year;
+
+  var y = dt.substr(0, 4);
+  var m = dt.substr(4, 2);
+  var d = dt.substr(6, 2);
+
+  var M = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+
+  var mydate = M[+m - 1] + " " + d + ", " + y;
+
 
       layer.bindPopup(
 
