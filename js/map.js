@@ -4,6 +4,9 @@ var map = L.map('map', {
     center: [50.9, 1.8]
 });
 
+map.options.minZoom = 8;
+map.options.maxZoom = 14;
+
 
 L.tileLayer('https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png', {
 	attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> ; Nicolas Lambert & Maël Galisson, 2020',

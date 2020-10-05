@@ -4,6 +4,9 @@ var map = L.map('map', {
     center: [50.9, 1.8]
 });
 
+map.options.minZoom = 8;
+map.options.maxZoom = 14;
+
 
 L.tileLayer('http://tiles.lyrk.org/ls/{z}/{x}/{y}?apikey=982c82cc765f42cf950a57de0d891076', {
     attribution: '© <a href="http://osm.org/copyright">OpenStreetMap</a>, Nicolas Lambert & Maël Galisson, 2020'
