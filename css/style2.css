@@ -23,7 +23,7 @@ html{background-color:#ebebeb}
 
 #slider-range { position:absolute; top:40px; right:10px ; width:150px; height:10px}
 
-#contrib { position:absolute; bottom:10px; left:220px ; width:80px; height:20px ; 
+#contrib { position:absolute; bottom:8px; left:258px ; width:80px; height:20px ; 
 	padding-right:5px; font-size:11px; text-align:center;
 	font-family: Verdana;
 	}
