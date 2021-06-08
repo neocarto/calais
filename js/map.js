@@ -110,8 +110,8 @@ $( function() {
       
       range: true,
       min: 1999,
-      max: 2019,
-      values: [ 1999, 2019 ],
+      max: 2021,
+      values: [ 1999, 2021 ],
       slide: function( event, ui ) {
         $( "#amount" ).val( "De " + ui.values[ 0 ] + " à " + ui.values[ 1 ] );
 	foo(ui.values[ 0 ],ui.values[ 1 ]);

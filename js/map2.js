@@ -122,7 +122,7 @@ function foo(year_min, year_max) {
   });
   let lyrs = markers.getLayers();
   lyrs.forEach(l => { l.setIcon(new my_icon); });
-d3.select('#compteur').html(points.getLayers().length +" morts")
+d3.select('#compteur').html(points.getLayers().length +" deaths")
 
 }
 
@@ -134,8 +134,8 @@ $( function() {
       
       range: true,
       min: 1999,
-      max: 2020,
-      values: [ 1999, 2020 ],
+      max: 2021,
+      values: [ 1999, 2021 ],
       slide: function( event, ui ) {
         $( "#amount" ).val( "From " + ui.values[ 0 ] + " to " + ui.values[ 1 ] );
 	foo(ui.values[ 0 ],ui.values[ 1 ]);
