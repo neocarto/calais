@@ -33,9 +33,9 @@ var tabulate = function (data,columns) {
 }
 
 d3.select('#bottom').html("<br/>")
-d3.csv('data/Calais.csv',function (data) {
+d3.csv('data/Calais 20220511.csv',function (data) {
 	var columns = ['name','age','year','cause','nationalite']
   tabulate(data,columns)
- d3.select('#bottom').append('div').attr("id","footnote").html("<br/><a href='data/Calais.csv' download>Télécharger les données</a><br/><br/>")
+ d3.select('#bottom').append('div').attr("id","footnote").html("<br/><a href='data/Calais 20220511.csv' download>Télécharger les données</a><br/><br/>")
 })
 
