@@ -1,41 +1,45 @@
-var tabulate = function (data,columns) {
+var tabulate = function (data, columns) {
+  var table = d3.select("#bottom").append("table").attr("class", "datatable");
+  var thead = table.append("thead");
+  var tbody = table.append("tbody");
 
- var table = d3.select('#bottom').append('table').attr('class','datatable')
-	var thead = table.append('thead')
-	var tbody = table.append('tbody')
+  thead
+    .append("tr")
+    .selectAll("th")
+    .data(columns)
+    .enter()
+    .append("th")
+    .text(function (d) {
+      return d;
+    });
 
-	thead.append('tr')
-	  .selectAll('th')
-	    .data(columns)
-	    .enter()
-	  .append('th')
-	    .text(function (d) { return d })
+  var rows = tbody.selectAll("tr").data(data).enter().append("tr");
 
-	var rows = tbody.selectAll('tr')
-	    .data(data)
-	    .enter()
-	  .append('tr')
-
-	var cells = rows.selectAll('td')
-	    .data(function(row) {
-	    	return columns.map(function (column) {
-	    		return { column: column, value: row[column] }
-	      })
-      })
-      .enter()
-    .append('td').attr("class","datatd")
-      .text(function (d) { return d.value })
-
+  var cells = rows
+    .selectAll("td")
+    .data(function (row) {
+      return columns.map(function (column) {
+        return { column: column, value: row[column] };
+      });
+    })
+    .enter()
+    .append("td")
+    .attr("class", "datatd")
+    .text(function (d) {
+      return d.value;
+    });
 
   return table;
+};
 
-  
-}
-
-d3.select('#bottom').html("<br/>")
-d3.csv('data/Calais 20220511.csv',function (data) {
-	var columns = ['name','age','year','cause','nationalite']
-  tabulate(data,columns)
- d3.select('#bottom').append('div').attr("id","footnote").html("<br/><a href='data/Calais 20220511.csv' download>Télécharger les données</a><br/><br/>")
-})
-
+d3.select("#bottom").html("<br/>");
+d3.csv("data/Calais 20220809.csv", function (data) {
+  var columns = ["name", "age", "year", "cause", "nationalite"];
+  tabulate(data, columns);
+  d3.select("#bottom")
+    .append("div")
+    .attr("id", "footnote")
+    .html(
+      "<br/><a href='data/Calais 20220809.csv' download>Télécharger les données</a><br/><br/>"
+    );
+});
