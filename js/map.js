@@ -17,7 +17,7 @@ L.tileLayer(
   }
 ).addTo(map);
 
-var points = omnivore.csv("data/Calais 20220809.csv");
+var points = omnivore.csv("data/Calais 20230103.csv");
 var markers;
 var on_hold = [];
 
@@ -123,8 +123,8 @@ $(function () {
   $("#slider-range").slider({
     range: true,
     min: 1999,
-    max: 2022,
-    values: [1999, 2022],
+    max: 2023,
+    values: [1999, 2023],
     slide: function (event, ui) {
       $("#amount").val("De " + ui.values[0] + " à " + ui.values[1]);
       foo(ui.values[0], ui.values[1]);
