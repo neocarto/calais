@@ -143,8 +143,8 @@ $(function () {
   $("#slider-range").slider({
     range: true,
     min: 1999,
-    max: 2023,
-    values: [1999, 2023],
+    max: 2024,
+    values: [1999, 2024],
     slide: function (event, ui) {
       $("#amount").val("From " + ui.values[0] + " to " + ui.values[1]);
       foo(ui.values[0], ui.values[1]);
