@@ -12,7 +12,7 @@ L.tileLayer("https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png", {
     '© <a href="http://osm.org/copyright">OpenStreetMap</a>, Nicolas Lambert & Maël Galisson, 2020',
 }).addTo(map);
 
-var points = omnivore.csv("../data/Calaisborder20241121.csv");
+var points = omnivore.csv("../data/Calaisborder20250324.csv");
 var markers;
 var on_hold = [];
 
@@ -143,8 +143,8 @@ $(function () {
   $("#slider-range").slider({
     range: true,
     min: 1999,
-    max: 2024,
-    values: [1999, 2024],
+    max: 2025,
+    values: [1999, 2025],
     slide: function (event, ui) {
       $("#amount").val("From " + ui.values[0] + " to " + ui.values[1]);
       foo(ui.values[0], ui.values[1]);
