@@ -9,10 +9,10 @@ map.options.maxZoom = 14;
 
 L.tileLayer("https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png", {
   attribution:
-    '© <a href="http://osm.org/copyright">OpenStreetMap</a>, Nicolas Lambert & Maël Galisson, 2020',
+    '© <a href="http://osm.org/copyright">OpenStreetMap</a>, Nicolas Lambert & Maël Galisson, 2026',
 }).addTo(map);
 
-var points = omnivore.csv("../data/Calaisborder20250324.csv");
+var points = omnivore.csv("../data/Calais border 20260309.csv");
 var markers;
 var on_hold = [];
 
@@ -72,7 +72,7 @@ function attachPopups() {
         "<tr><td colspan=2 class='tbl2'>" +
         props.description_en +
         "</td></tr>" +
-        "</table>"
+        "</table>",
     );
   });
 }
@@ -143,8 +143,8 @@ $(function () {
   $("#slider-range").slider({
     range: true,
     min: 1999,
-    max: 2025,
-    values: [1999, 2025],
+    max: 2026,
+    values: [1999, 2026],
     slide: function (event, ui) {
       $("#amount").val("From " + ui.values[0] + " to " + ui.values[1]);
       foo(ui.values[0], ui.values[1]);
@@ -154,14 +154,14 @@ $(function () {
     "From " +
       $("#slider-range").slider("values", 0) +
       " to " +
-      $("#slider-range").slider("values", 1)
+      $("#slider-range").slider("values", 1),
   );
 });
 
 // Others elements ---------------------------------------------------
 d3.select("#logo").html("<img src='../img/logo2.png' width='250px'></img>");
 d3.select("#contrib").html(
-  "<a href='mailto:mael.galisson@gmail.com?subject=[Migrants Calais]&cc=nicolas.lambert@cnrs.fr&body=Je contribue...'>[Contribute]</a>"
+  "<a href='mailto:mael.galisson@gmail.com?subject=[Migrants Calais]&cc=nicolas.lambert@cnrs.fr&body=Je contribue...'>[Contribute]</a>",
 );
 
 // https://github.com/dwilhelm89/LeafletSlider

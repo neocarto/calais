@@ -33,13 +33,13 @@ var tabulate = function (data, columns) {
 };
 
 d3.select("#bottom").html("<br/>");
-d3.csv("../data/Calaisborder20250324.csv", function (data) {
+d3.csv("../data/Calais border 20260309.csv", function (data) {
   var columns = ["name", "age", "year", "incident", "nationality"];
   tabulate(data, columns);
   d3.select("#bottom")
     .append("div")
     .attr("id", "footnote")
     .html(
-      "<br/><a href='../data/Calaisborder20250324.csv' download>Download the data</a><br/><br/>"
+      "<br/><a href='../data/Calais border 20260309.csv' download>Download the data</a><br/><br/>",
     );
 });
