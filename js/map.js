@@ -8,12 +8,13 @@ map.options.minZoom = 8;
 map.options.maxZoom = 14;
 
 L.tileLayer(
-  "https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_all/{z}/{x}/{y}.png",
+  "https://basemaps.cartocdn.com/rastertiles/dark_all/{z}/{x}/{y}.png?key=cb1_4qmx_1_4b0b408b2c87fe47f415de12",
   {
     attribution:
-      '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a> ; Nicolas Lambert & Maël Galisson, 2026',
-    subdomains: "abcd",
-    maxZoom: 19,
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, ' +
+      '&copy; <a href="https://carto.com/attributions">CARTO</a> ; ' +
+      "Nicolas Lambert & Maël Galisson, 2026",
+    maxZoom: 20,
   },
 ).addTo(map);
 var points = omnivore.csv("data/Calais border 20260309.csv");

@@ -7,10 +7,13 @@ var map = L.map("map", {
 map.options.minZoom = 8;
 map.options.maxZoom = 14;
 
-L.tileLayer("https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png", {
-  attribution:
-    '© <a href="http://osm.org/copyright">OpenStreetMap</a>, Nicolas Lambert & Maël Galisson, 2026',
-}).addTo(map);
+L.tileLayer(
+  "https://tile.openstreetmap.bzh/br/{z}/{x}/{y}.png?key=cb1_4qmx_1_4b0b408b2c87fe47f415de12",
+  {
+    attribution:
+      '© <a href="http://osm.org/copyright">OpenStreetMap</a>, Nicolas Lambert & Maël Galisson, 2026',
+  },
+).addTo(map);
 
 var points = omnivore.csv("../data/Calais border 20260309.csv");
 var markers;
